@@ -18,6 +18,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '11'
+        distribution: 'temurin' # Nhà cung cấp JDK (thường sử dụng temurin)
 
     - name: Build with Gradle
       run: ./gradlew build
