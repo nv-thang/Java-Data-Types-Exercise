@@ -21,7 +21,11 @@ jobs:
         distribution: 'temurin'
 
     - name: Install Gradle
-      run: sudo apt-get install gradle
+      run: |
+        wget https://services.gradle.org/distributions/gradle-7.3.3-bin.zip
+        unzip gradle-7.3.3-bin.zip
+        sudo mv gradle-7.3.3 /opt/gradle
+        sudo ln -s /opt/gradle/bin/gradle /usr/local/bin/gradle
 
     - name: Build with Gradle
       run: gradle build
