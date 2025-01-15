@@ -18,10 +18,13 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '11'
-        distribution: 'temurin' # Nhà cung cấp JDK (thường sử dụng temurin)
+        distribution: 'temurin'
+
+    - name: Install Gradle
+      run: sudo apt-get install gradle
 
     - name: Build with Gradle
-      run: ./gradlew build
+      run: gradle build
 
     - name: Run tests
-      run: ./gradlew test
+      run: gradle test
